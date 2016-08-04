@@ -17,9 +17,9 @@
 
 using namespace std;
 
-long sumOfFactors(long n);
-long power (int, int);
-
+//long sumOfFactors(long n);
+//long power (int, int);
+/*
 long power(int base, int power) {
     long result = 1;
     while (power--) {
@@ -28,7 +28,7 @@ long power(int base, int power) {
     return result;
 }
 
-int main(int argc, char* argv[]) {
+int mainPerfect(int argc, char* argv[]) {
     const long limit = argc > 1 ? atoi(argv[1]) : LONG_MAX;
     long candidate;
     for (int n = 2; (candidate = power(2, n - 1)*(power(2, n) - 1)) < limit; n++) {
@@ -49,3 +49,4 @@ long sumOfFactors(long n) {
     return total;
 }
 
+*/
