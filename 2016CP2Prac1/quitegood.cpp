@@ -11,15 +11,42 @@
  * Created on 4 August 2016, 3:40 PM
  */
 
+
 #include <cstdlib>
+#include <climits>
+#include <iostream>
 
 using namespace std;
 
-/*
- * 
- */
-int main(int argc, char** argv) {
+long sumOfFactors(long n);
+long power (int, int);
 
-    return 0;
+long power(int base, int power) {
+    long result = 1;
+    while (power--) {
+        result *= base;
+    }
+    return result;
+}
+
+int main(int argc, char* argv[]) {
+    const long limit = argc > 1 ? atoi(argv[1]) : LONG_MAX;
+    long candidate;
+    for (int n = 2; (candidate = n) < limit; n++) {
+        if (sumOfFactors(candidate) == candidate) {
+            cout << candidate << endl;
+        }
+    }
+    cout << "That's all!";
+}
+
+long sumOfFactors(long n) {
+    long total = 1;
+    for (long factor = 2; factor * factor < n; factor++) {
+        if (n % factor == 0) {
+            total += factor + n / factor;
+        }
+    }
+    return total;
 }
 
